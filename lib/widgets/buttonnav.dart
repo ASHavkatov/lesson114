@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lesson114/utils/utils.dart';
 
-import '../../utils/utils.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({super.key});
+  const BottomNavBar(
+      {super.key,
+      required this.firstsvg,
+      required this.secondsvg,
+      required this.thirdsvg,
+      required this.forthsvg});
+
+  final String firstsvg, secondsvg, thirdsvg, forthsvg;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +29,10 @@ class BottomNavBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SvgPicture.asset('assets/svg/home.svg'),
-              SvgPicture.asset('assets/svg/community.svg'),
-              SvgPicture.asset('assets/svg/categories.svg'),
-              SvgPicture.asset('assets/svg/profile.svg')
+              SvgPicture.asset(firstsvg),
+              SvgPicture.asset(secondsvg,),
+              SvgPicture.asset(thirdsvg),
+              SvgPicture.asset(forthsvg)
             ],
           ),
         ),
